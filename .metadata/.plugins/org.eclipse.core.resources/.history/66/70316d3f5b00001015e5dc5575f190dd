@@ -1,0 +1,20 @@
+package view;
+
+import model.piscina;
+
+public class tela {
+
+	public static void main(String[] args) {
+		System.out.println("ola");
+       piscina piscina1;
+       piscina1 = new piscina();
+       piscina1.getComprimento();
+       piscina1.getLargura();
+       piscina1.getprofundidadeAtual();
+       piscina1.getProfundidademaxima();
+       
+       
+
+	}
+
+}

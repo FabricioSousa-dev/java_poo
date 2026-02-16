@@ -1,0 +1,20 @@
+package modelos;
+
+public class Pricipal {
+	public static void main(String[] args) {
+		Sysrtem.aut.println("Meu primeiro programa java");
+		
+		Triangulo pedro = new Triangulo();
+		
+		pedro.cor = "azul";
+		
+		System.out.println("O triangulo é " + pedro.cor);
+		
+		pedro.mudarCor("vermelho");
+		
+		System.out.println("Agora o triangulo mudou para " + pedro.cor);
+		
+		System.out.println("fim do mue programa de triangulo");
+	}
+
+}

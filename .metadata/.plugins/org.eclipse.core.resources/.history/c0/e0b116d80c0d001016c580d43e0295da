@@ -1,0 +1,31 @@
+package view;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import model.album;
+import model.avaliadorDeAlbum;
+import model.figurinha;
+
+public class tela {
+	
+
+	public static void main(String[] args) {
+		album album1 = new album("copa do mundo de: ", 2014);
+		album album2 = new album("copa do mundo de:  ", 2001);
+		figurinha f1 = new figurinha("neymar", 70, 50);
+		figurinha f2 = new figurinha("Ronaldo", 9, 20);
+		figurinha f3 = new figurinha("messi", 6, 47);
+		System.out.println(album1.toString());
+		album1.setFigurinha(f1);
+		System.out.println(f1.toString())
+	    System.out.println(album2.toString());
+		System.out.println(f2.toString());
+		
+		List<figurinha> figurinhas = new ArrayList<figurinha>();
+		figurinhas.add(f1);
+		System.out.println(figurinhas.get(4));
+		
+	}
+
+}

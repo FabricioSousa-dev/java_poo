@@ -1,0 +1,46 @@
+package model;
+
+public class PessoaJuridica  extends Contribuinte{
+	
+	private String nome;
+	private double renda;
+	
+	
+
+	public PessoaJuridica(String nome, double renda) {
+		super(nome, renda);
+		
+	}
+	public String getNome() {
+		return nome;
+	}
+	public double getRenda() {
+		return renda;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public void setRenda(double renda) {
+		this.renda = renda;
+	}
+	@Override
+	public String toString() {
+		return  super.toString() + " , PessoaJuridica " + nome + ", renda=" + renda + "";
+	}
+	@Override
+	public double CalcularImposto() {
+		double renda = getRenda();
+		if (renda >= 1000 && renda < 2000) {
+	        return renda * 0.20;	
+	    }
+	    if (renda >= 2000 && renda < 5000) {
+	        return renda * 0.20;
+	    }
+	    if(renda > 500) {
+	    	return renda *0.20;
+	    }
+		return renda;
+	    
+	}
+
+}

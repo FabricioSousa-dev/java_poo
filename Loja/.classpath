@@ -1,0 +1,15 @@
+Façam
+ 
+	public void update(Cachorro cachorro) {
+		
+	}
+	
+	public List<Cachorro> getAll() {
+ 
+	}
+	
+	public List<Cachorro> findByName(String nome) {
+		
+		
+	}
+ 

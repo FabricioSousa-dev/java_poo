@@ -1,0 +1,8 @@
+package modelos;
+
+public class Triangulosst {
+public String cor;
+public double ladoA;
+public double ladoB;
+public double ladoc;
+}
