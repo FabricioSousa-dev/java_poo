@@ -1,273 +1,81 @@
-# ☕ Programação Orientada a Objetos em Java
 
-## 📌 Sobre o Projeto
+# ☕ Java POO & Banco de Dados
 
-Este repositório reúne exercícios, exemplos e práticas desenvolvidos durante as aulas de Programação Orientada a Objetos (POO) utilizando Java na IDE Eclipse.
+[![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)](https://www.java.com/)
+[![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://www.microsoft.com/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 
-O objetivo do projeto é aplicar os principais conceitos da orientação a objetos na prática, fortalecendo a base para desenvolvimento backend, arquitetura de software e sistemas escaláveis.
+Repositório dedicado ao estudo e consolidação de **Programação Orientada a Objetos (POO)** em Java e integração com banco de dados relacionais. Os projetos variam desde exercícios focados em lógica de negócio estrutural até sistemas robustos com persistência de dados.
 
-Os códigos presentes no projeto abordam conceitos fundamentais como:
+## 🧠 Conceitos de POO e Arquitetura Aplicados
 
-* classes e objetos;
-* encapsulamento;
-* herança;
-* polimorfismo;
-* abstração;
-* construtores;
-* métodos;
-* atributos;
-* relacionamentos entre classes.
+Este repositório demonstra a aplicação prática de padrões de desenvolvimento corporativos e acadêmicos:
 
----
+* **Pilares da POO:** Uso extensivo de Encapsulamento, Herança e Polimorfismo para garantir código limpo e reutilizável nas entidades de negócio.
+* **Arquitetura em Camadas:** Divisão clara das responsabilidades do sistema em pacotes lógicos:
+  * `model`: Classes de domínio (ex: `Autor`, `ContaBancaria`, `Produto`).
+  * `view`: Camada de apresentação e classes executáveis (testes).
+  * `db`: Camada de persistência e acesso a dados estruturados.
+* **Padrão DAO (Data Access Object):** Abstração da lógica de leitura e escrita no banco de dados. Exemplos práticos implementados no repositório: `AutorDao`, `produtosDao`, `AlbumDAO`, e `CachorroDao`.
+* **JDBC (Java Database Connectivity):** Uso centralizado da classe `FabricaDeConexoes` para estabelecer comunicação segura e eficiente com o PostgreSQL.
 
-# 🚀 Tecnologias Utilizadas
+## 🗂️ Estrutura dos Projetos
 
-* Java
-* Eclipse IDE
-* JDK 17+
+O repositório contém múltiplos sistemas, que podem ser divididos por complexidade de implementação:
 
----
+### 🔹 Sistemas Estruturais e Lógicos
+Projetos focados em algoritmos, operações matemáticas e regras de negócio em memória (sem persistência permanente):
+* `Calculadora`, `geometria`, `Piscina`, `retangulos`, `Carbono`.
 
-# 📂 Estrutura do Projeto
+### 🔹 Sistemas com Persistência de Dados (JDBC & DAO)
+Aplicações completas que realizam operações CRUD (Create, Read, Update, Delete) diretamente no banco de dados relacional:
+* `Banco` e `sistemabancario`
+* `Biblioteca`
+* `Loja`, `Produtos` e `estoque`
+* `Musica` e `albuns`
+* `canil`
+* `RegistroVeiculos`, `veiculos` e `imoveis`
 
-```bash
-Eclipse_java/
-│
-├── src/
-│   ├── application/
-│   ├── entities/
-│   ├── util/
-│   ├── program/
-│   └── model/
-│
-└── README.md
-```
+## 🚀 Guia de Execução (Ambiente Windows)
 
-A estrutura pode variar conforme os exercícios e exemplos criados durante as aulas.
+Como os projetos foram desenvolvidos no ecossistema Windows utilizando a IDE Eclipse (contendo a pasta `.metadata`), a forma mais recomendada de testá-los é importando-os diretamente para a sua IDE.
 
----
+### Pré-requisitos
+* [Java JDK](https://www.oracle.com/java/technologies/downloads/) instalado e configurado nas Variáveis de Ambiente do Windows.
+* **PostgreSQL** instalado e rodando localmente (necessário para os projetos da categoria de Persistência).
+* [Eclipse IDE for Java Developers](https://www.eclipse.org/downloads/) (Recomendado).
 
-# ⚙️ Como Executar o Projeto
+### Executando via Eclipse IDE
+1. Abra o Eclipse em seu ambiente Windows.
+2. Vá em `File > Import... > General > Existing Projects into Workspace`.
+3. Selecione o diretório raiz clonado deste repositório e clique em `Finish`. O Eclipse reconhecerá as configurações graças à pasta `.metadata`.
+4. **Configuração de Banco:** Para projetos com JDBC, acesse a classe `FabricaDeConexoes` dentro do pacote `db` e atualize as credenciais (usuário e senha do Postgres), caso necessário.
+5. Navegue até o pacote `view` de um dos projetos, clique com o botão direito na classe principal (ex: `TesteExecutavel.java` ou `Principal.java`) e vá em `Run As > Java Application`.
 
-## 1️⃣ Instalar o Java
+### Executando via CMD ou PowerShell
+Para projetos lógicos menores que não dependem do conector do PostgreSQL:
+1. Abra o Prompt de Comando ou PowerShell.
+2. Navegue até a pasta `src` do projeto desejado:
+cmd
+   cd caminho\para\java_poo\NomeDoProjeto\src
 
-Baixe o Java no site oficial:
 
-urlOracle Java Downloads[https://www.oracle.com/java/technologies/downloads/](https://www.oracle.com/java/technologies/downloads/)
 
-Verifique a instalação:
+3. Compile os arquivos Java:
 
-```bash
-java -version
-```
+cmd
+   javac view/NomeDaClassePrincipal.java
 
----
 
-## 2️⃣ Instalar o Eclipse
 
-urlEclipse IDE[https://www.eclipse.org/downloads/](https://www.eclipse.org/downloads/)
+4. Execute a classe compilada:
 
----
+cmd
+   java view.NomeDaClassePrincipal
 
-## 3️⃣ Importar o Projeto
 
-No Eclipse:
 
-```text
-File → Import → Existing Projects into Workspace
-```
 
-Selecione a pasta do projeto.
 
----
+*Desenvolvido por Fabricio Sousa.*
 
-## 4️⃣ Executar
-
-Execute a classe principal (`Main.java`, `Program.java` ou equivalente).
-
----
-
-# 🎯 Objetivos Pedagógicos
-
-Este projeto foi desenvolvido para:
-
-* compreender orientação a objetos;
-* estruturar sistemas utilizando classes;
-* melhorar organização de código;
-* aprender reutilização de software;
-* praticar modelagem de entidades;
-* desenvolver pensamento arquitetural;
-* criar base sólida em Java.
-
----
-
-# 📚 Conceitos de POO Trabalhados
-
-## 🔹 Classes e Objetos
-
-Representação de entidades do mundo real utilizando atributos e comportamentos.
-
-### Conceitos:
-
-* atributos;
-* métodos;
-* instanciação;
-* objetos.
-
----
-
-## 🔹 Encapsulamento
-
-Proteção de atributos utilizando modificadores de acesso.
-
-### Conceitos:
-
-* private;
-* public;
-* getters;
-* setters.
-
----
-
-## 🔹 Construtores
-
-Inicialização de objetos.
-
-### Conceitos:
-
-* sobrecarga;
-* inicialização automática;
-* organização de estado.
-
----
-
-## 🔹 Herança
-
-Reaproveitamento de código entre classes.
-
-### Conceitos:
-
-* extends;
-* super;
-* especialização.
-
----
-
-## 🔹 Polimorfismo
-
-Capacidade de um objeto assumir diferentes formas.
-
-### Conceitos:
-
-* sobrescrita de métodos;
-* classes abstratas;
-* interfaces.
-
----
-
-## 🔹 Abstração
-
-Modelagem simplificada de sistemas.
-
-### Conceitos:
-
-* abstração de comportamento;
-* regras de negócio.
-
----
-
-# 🧠 Habilidades Desenvolvidas
-
-Durante os estudos foram praticadas habilidades importantes para engenharia de software:
-
-* modelagem orientada a objetos;
-* organização de código;
-* separação de responsabilidades;
-* reutilização de componentes;
-* lógica de programação;
-* manutenção de software;
-* arquitetura básica de sistemas.
-
----
-
-# 💼 Valor para Portfólio
-
-Este projeto demonstra:
-
-✔️ Evolução em Java
-
-✔️ Conhecimento em orientação a objetos
-
-✔️ Estruturação de aplicações
-
-✔️ Organização de código
-
-✔️ Base importante para backend
-
-✔️ Capacidade de aprendizado contínuo
-
----
-
-# 🔥 Melhorias Futuras
-
-Possíveis evoluções do projeto:
-
-* integração com banco de dados;
-* interface gráfica;
-* APIs REST;
-* Spring Boot;
-* testes automatizados;
-* persistência com JPA/Hibernate;
-* padrões de projeto.
-
----
-
-# 📖 Organização Recomendada
-
-```bash
-src/
-│
-├── application/
-├── entities/
-├── services/
-├── repositories/
-├── util/
-└── interfaces/
-```
-
-Essa estrutura aproxima o projeto de padrões utilizados profissionalmente.
-
----
-
-# 👨‍💻 Autor
-
-## Fabrício Sousa
-
-Estudante de Engenharia de Software com foco em:
-
-* backend;
-* Java;
-* Python;
-* orientação a objetos;
-* arquitetura de software;
-* computação em nuvem.
-
-GitHub:
-
-urlFabricioSousa-dev GitHub[https://github.com/FabricioSousa-dev](https://github.com/FabricioSousa-dev)
-
----
-
-# ⭐ Considerações Finais
-
-Este projeto representa uma etapa importante no aprendizado de desenvolvimento orientado a objetos.
-
-Os conceitos aplicados aqui formam a base para tecnologias modernas do ecossistema Java como:
-
-* Spring Boot;
-* microsserviços;
-* APIs REST;
-* aplicações corporativas;
-* sistemas distribuídos.
-
-A Programação Orientada a Objetos é uma das competências mais importantes para desenvolvimento profissional de software.
